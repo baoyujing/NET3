@@ -1,0 +1,16 @@
+mode_dims:
+  0: 54
+  1: 4
+
+TGCN:
+  dim_input: 1
+  dim_output: 8
+  valid_modes: [0, 1]
+
+TLSTM:
+  dim_output: 8
+  is_decompose: True
+  mode_dims_hidden: {0: 44, 1: 4}
+
+Output:
+  multiple: True

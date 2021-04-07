@@ -1,0 +1,34 @@
+# Train
+Trainer:
+  n_epoch: 50
+  lr: 0.01
+  save_dir: "./ckpts/future/"
+  tolerance: 10
+
+TrainIterator:
+  window_size: 6   # 5+1
+  stride: 1
+  batch_size: 100
+  shuffle: True
+  mode: "train"   # train or eval
+  data_root: "./dataset_processed/future/"
+  values_name: "values.pkl"
+  indicators_train_name: "train_idx.pkl"
+  indicators_eval_name: "val_idx.pkl"
+  network_name: "networks.pkl"
+
+# Evaluate
+Evaluator:
+  pretrained_path: "./ckpts/future/model.train.ckpt"
+
+EvalIterator:
+  window_size: 6   # 5+1
+  stride: 1
+  batch_size: 100
+  shuffle: False
+  mode: "eval"   # train or eval
+  data_root: "./dataset_processed/future/"
+  values_name: "values.pkl"
+  indicators_train_name: "train_idx.pkl"
+  indicators_eval_name: "test_idx.pkl"
+  network_name: "networks.pkl"
